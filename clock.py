@@ -6,9 +6,9 @@ from utils import printSomething
 q = Queue(connection=conn)
 sched = BlockingScheduler()
 
-@sched.scheduled_job('interval', seconds=5)
-def pollTurk():
+@sched.scheduled_job('interval', minutes=1)
+def OneMinuteClock():
 	print('this job runs every 5 seconds')
-	result = q.enqueue(printSomething)
+	result = q.enqueue(pollTurk)
 
 sched.start()
