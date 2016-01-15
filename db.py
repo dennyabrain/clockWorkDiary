@@ -113,3 +113,9 @@ class db:
 		                                                    }
 		                                            }
 		                                    )
+
+	def getUsernameFromHitID(self,hitId):
+		for post in self.findMany({}):
+			if "lastHit" in post:
+				if post['lastHit']['hitID']==hitId:
+					print post["name"]
