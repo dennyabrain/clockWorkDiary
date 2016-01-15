@@ -2,7 +2,9 @@ import os
 from boto.mturk.connection import MTurkConnection
 import requests
 import json
+from db import db
 
+databaseUser = db('heroku_lmx991zw','users')
 slackUrl = 'https://hooks.slack.com/services/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'
 
 def printSomething():
@@ -45,6 +47,9 @@ def pollTurk():
 	        for question_form_answer in assignment.answers[0]:
 	            for key in question_form_answer.fields:
 	                print "%s" % (key)
+	                #find the username based on hitID assignmentID
+	                #insert assignmentID and response for the user
+	                databaseUser.updateResponse(self,'abrainB',assignment.AssignmentId,key)
 	                r = requests.post(slackUrl, data=json.dumps({'text':key}))
 	        #mtc.approve_assignment(assignment.AssignmentId)
 	        print "--------------------"
