@@ -45,7 +45,7 @@ def pollTurk():
 	        for question_form_answer in assignment.answers[0]:
 	            for key in question_form_answer.fields:
 	                print "%s" % (key)
-	                r = requests.post(slackUrl, data=json.dumps({'text':flaskLogin.current_user.id}))
+	                r = requests.post(slackUrl, data=json.dumps({'text':key}))
 	        #mtc.approve_assignment(assignment.AssignmentId)
 	        print "--------------------"
 	    #mtc.disable_hit(hit.HITId)
