@@ -1,6 +1,7 @@
 import os
 from boto.mturk.connection import MTurkConnection
 import requests
+import json
 
 slackUrl = 'https://hooks.slack.com/services/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'
 
@@ -44,7 +45,7 @@ def pollTurk():
 	        for question_form_answer in assignment.answers[0]:
 	            for key in question_form_answer.fields:
 	                print "%s" % (key)
-	                r = requests.post(slackUrl, data = {"response":key})
+	                r = requests.post(slackUrl, data=json.dumps({'text':flaskLogin.current_user.id}))
 	        #mtc.approve_assignment(assignment.AssignmentId)
 	        print "--------------------"
 	    #mtc.disable_hit(hit.HITId)
