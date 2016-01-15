@@ -105,7 +105,7 @@ class db:
 	def updateResponse(self,userId,assignmentId,response):
 		for post in self.findMany({}):
 		    if userId in post:
-		        databaseUser.collection.update_one({
+		        self.collection.update_one({
 		                                    'name': userId
 		                                    }, 
 		                                            {'$set': {'lastHit.response':response,
