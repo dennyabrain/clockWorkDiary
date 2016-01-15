@@ -1,7 +1,7 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
 from rq import Queue
 from worker import conn
-from utils import printSomething
+from utils import pollTurk
 
 q = Queue(connection=conn)
 sched = BlockingScheduler()
