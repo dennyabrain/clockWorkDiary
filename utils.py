@@ -43,7 +43,7 @@ def pollTurk():
 	        print "Answers of the worker %s" % assignment.WorkerId
 	        for question_form_answer in assignment.answers[0]:
 	            for key in question_form_answer.fields:
-	                print "%s: %s" % (key)
+	                print "%s" % (key)
 	                r = requests.post(slackUrl, data = {"response":key})
 	        #mtc.approve_assignment(assignment.AssignmentId)
 	        print "--------------------"
