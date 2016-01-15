@@ -118,4 +118,4 @@ class db:
 		for post in self.findMany({}):
 			if "lastHit" in post:
 				if post['lastHit']['hitID']==hitId:
-					print post["name"]
+					return post["name"]
