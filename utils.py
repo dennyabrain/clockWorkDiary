@@ -4,8 +4,6 @@ import requests
 import json
 from db import db
 
-databaseUser = db('heroku_lmx991zw','users')
-slackUrl = 'https://hooks.slack.com/services/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'
 
 def printSomething():
 	print "something"
@@ -30,6 +28,9 @@ def get_all_reviewable_hits(mtc):
     return hits
 
 def pollTurk():
+	databaseUser = db('heroku_lmx991zw','users')
+	slackUrl = 'https://hooks.slack.com/services/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'
+
 	ACCESS_ID=os.environ['ACCESS_KEY_ID']
 	SECRET_KEY=os.environ['SECRET_ACCESS_KEY']
 	HOST = 'mechanicalturk.sandbox.amazonaws.com'
