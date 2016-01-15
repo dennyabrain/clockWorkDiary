@@ -49,7 +49,7 @@ def pollTurk():
 	                print "%s" % (key)
 	                #find the username based on hitID assignmentID
 	                #insert assignmentID and response for the user
-	                databaseUser.updateResponse(self,'abrainB',assignment.AssignmentId,key)
+	                databaseUser.updateResponse('abrainB',assignment.AssignmentId,key)
 	                r = requests.post(slackUrl, data=json.dumps({'text':key}))
 	        #mtc.approve_assignment(assignment.AssignmentId)
 	        print "--------------------"
