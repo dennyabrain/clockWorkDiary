@@ -5,7 +5,7 @@ import json
 from db import db
 
 databaseUser = db('heroku_lmx991zw','users')
-	slackUrl = 'https://hooks.slack.com/services/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'
+slackUrl = 'https://hooks.slack.com/services/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'
 
 def printSomething():
 	print "something"
