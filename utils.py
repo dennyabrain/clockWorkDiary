@@ -49,10 +49,11 @@ def pollTurk():
 	                print "%s" % (key)
 	                #find the username based on hitID assignmentID
 	                username = databaseUser.getUsernameFromHitID(hit.HITId)
+	                diaryEntry=databaseUser.getDiaryEntryFromHitID(hit.HITId)
 	                print "username is %s" % (username)
 	                #insert assignmentID and response for the user
 	                databaseUser.updateResponse(username,assignment.AssignmentId,key)
-	                r = requests.post(slackUrl, data=json.dumps({'text':key}))
+	                r = requests.post(slackUrl, data=json.dumps({'text':key,'username':username,'diaryEntry':diaryEntry}))
 	        #mtc.approve_assignment(assignment.AssignmentId)
 	        print "--------------------"
 	    #mtc.disable_hit(hit.HITId)

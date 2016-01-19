@@ -119,3 +119,9 @@ class db:
 			if "lastHit" in post:
 				if post['lastHit']['hitID']==hitId:
 					return post["name"]
+
+	def getDiaryEntryFromHitID(self,hitId):
+		for post in self.findMany({}):
+			if "lastHit" in post:
+				if post['lastHit']['hitID']==hitId:
+					return post["lastHit"]["text"]
