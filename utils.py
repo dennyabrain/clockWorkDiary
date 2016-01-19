@@ -54,7 +54,7 @@ def pollTurk():
 	                print "diaryEntry is %s" % (diaryEntry)
 	                #insert assignmentID and response for the user
 	                databaseUser.updateResponse(username,assignment.AssignmentId,key)
-	                r = requests.post(slackUrl, data=json.dumps({'text':"----\n"+username+"wrote \n"+diaryEntry+"\n mTurk response \n" + key}))
+	                r = requests.post(slackUrl, data=json.dumps({'text':"----\n"+username+"wrote \n"+diaryEntry+"\n mTurk response \n" + key+'\n----'}))
 	        #mtc.approve_assignment(assignment.AssignmentId)
 	        print "--------------------"
 	    #mtc.disable_hit(hit.HITId)
