@@ -8,7 +8,7 @@ sched = BlockingScheduler()
 
 @sched.scheduled_job('interval', minutes=1)
 def OneMinuteClock():
-	print('this job runs every 5 seconds')
+	print('this job runs every 1 minute')
 	result = q.enqueue(pollTurk)
 
 sched.start()
