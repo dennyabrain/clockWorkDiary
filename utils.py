@@ -32,7 +32,7 @@ def get_all_reviewable_hits(mtc):
 def pollTurk():
 	ACCESS_ID=os.environ['ACCESS_KEY_ID']
 	SECRET_KEY=os.environ['SECRET_ACCESS_KEY']
-	HOST = 'mechanicalturk.sandbox.amazonaws.com'
+	HOST = 'mechanicalturk.amazonaws.com'
 
 	mtc = MTurkConnection(aws_access_key_id=ACCESS_ID,
                       aws_secret_access_key=SECRET_KEY,
